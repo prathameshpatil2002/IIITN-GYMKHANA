@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Students' Gymkhana, IIIT NAGPUR</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../assets/img/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <%- include ('../header.ejs') %>
+    <!-- End Header -->
+
+    <!--Start Banner-->
+    <div class="row">
+        <div id="banner" class="col-md-12 col-xs-12">
+            <div class="banner-image-ace"></div>
+            <div class="banner-text text-center">
+                <img src="data:image/png;base64,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" height="100px" width="auto" alt="">
+                <h1>ACE</h1>
+                <p style="color: white;"></p>
+                <p><span class="descripeMe"></span></p>
+                <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">About us</a> -->
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+    <!--End Banner-->
+
+    <div class="back">
+        <div class="container">
+            <div class="row my-auto">
+                <div class="col-lg-6 text-center center ">
+                    <br>
+                    <br>
+
+                    <img src="https://nagpur.iiitiansnetwork.com/img/nagpur/club/ace.png" class="img-fluid" width="500px" height="auto" alt="">
+
+                    <br>
+
+                </div>
+                <div class="col-lg-6 ">
+                    <div class="text-center">
+                        <br><br>
+                        <h2>About Us</h2>
+                    </div>
+                    <p>ACE-The Entrepreneurship Cell of IIIT Nagpur is aimed towards encouraging entrepenurs and empowering them through education and resources.We keep on hosting events and talks from young entrepreneurs to quench the curiosity of creative minds.You can always connect to us if you are an innovator,an entrepreneur or a creative mind and give your dreams wings to fly.</p>
+
+                </div>
+
+
+
+            </div>
+            <br>
+            <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="text-center">
+                        <div class="card" id="happenings">
+                            <div class="card-body">
+                                <h2 class="card-title">HAPPENINGS</h2>
+                                <p class="card-text">
+                                    <% for(var i=0;i<result.length;i++){ %>
+                                        <div class='row'>
+                                            <div class='col-md-2'>
+                                                <center>
+                                                    <h2>From :</h2> <p><%=result[i].startDate %></p>
+                                                    <h2>To :</h2> <p><%=result[i].endDate %></p>
+                                                </center>
+                                            </div>
+                                            <div class='col-md-10'>
+                                                <center>
+                                                    <p style='margin-top:2vh;'><%=result[i].name %></p>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    <%}%>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" id="links">
+                    <div class="follow">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <center>FOLLOW US ON</center>
+                                </h5>
+                                <p class="card-text"></p>
+                                <div class="social-links">
+                                    <center>
+                                        <a href="https://www.instagram.com/quizclub.iitbbs/" class="instagram"><i class="fa fa-instagram"></i></a>
+                                        <a href="https://www.facebook.com/QFactorIITBBS" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="follow-other">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <center>OTHER SOCIETIES</center>
+                                </h5>
+                                <p class="card-text"></p>
+                    
+                                <div class="other-links">
+                                    <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQGkbpbg02IXgA/company-logo_200_200/0/1633502838299?e=2147483647&v=beta&t=sd2M73O-iaXpdTnIZhQtf7BRHGVVlI8NoyQ7P_M1Avw"
+                                        height="55px" width="55px" alt="">
+                                    <a href="panacea.html">IOTics</a>
+                                </div>
+                                <div class="other-links">
+                                    <img src="../assets/img/society logos/sfs.png" height="55px" width="55px" alt="">
+                                    <a href="s4s.html">STROKES</a>
+                                </div>
+                    
+                                <div class="other-links">
+                                    <img src="data:image/png;base64,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"
+                                        height="55px" width="55px" alt="">
+                                    <a href="">ACE</a>
+                                </div>
+                                <div class="other-links">
+                                    <img src="https://yt3.ggpht.com/ytc/AKedOLTRsshrRY4E32t_mm4YDc9AUPxWMToZKyOMQsYe=s88-c-k-c0x00ffffff-no-rj"
+                                        height="55px" width="55px" alt="">
+                                    <a href="">PROBE</a>
+                                </div>
+                                <div class="other-links">
+                                    <img src="https://oratorclub.vercel.app/_next/image?url=%2Fimages%2Fnavbar%2Fnavlogo.png&w=64&q=75"
+                                        height="55px" width="55px" alt="">
+                                    <a href="https://oratorclub.vercel.app/">ORATOR</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h1>Contact US</h1>
+                <p></p>
+            </div>
+            <div class="contactdetails">
+                <div class="contact">
+                    <div class="row">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Hardik Jain</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">CLUB HEAD</h6>
+                                <p class="card-text"></p>
+                                <center>
+                                    <!-- <a href="tel:9643076289" class="phone"><i class="fa fa-phone"></i></a> -->
+                                    <a href="#" class="mail"><i class="fa fa-envelope"></i></a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- ======= Footer ======= -->
+    <%- include ('../footer.ejs') %>
+        <!-- End Footer -->
+    
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Uncomment below i you want to use a preloader -->
+        <!-- <div id="preloader"></div> -->
+    
+        <!-- Vendor JS Files -->
+        <%- include ('../jsfiles.ejs') %>
+
+</body>
+
+</html>
