@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Students' Gymkhana, IIT NAGPUR</title>`
+
+    <!-- Favicons -->
+
+    <link rel="shortcut icon" href="https://iiitn.ac.in/images/Favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/team.css">
+    <style>
+        #header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 18px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent" style="background-color: black; padding-bottom: 2%;">
+        <div class="container-fluid">
+    
+            <div class="row justify-content-center">
+                <div class="col-xl-11 d-flex align-items-center">
+                    <a href="https://iiitn.ac.in/" style="border-left:0px; padding-right:14px;" class="logo"><img
+                            src="https://img.collegepravesh.com/2016/10/IIIT-Nagpur-Logo.jpg" class="img-fluid"></a>
+                    <a href="" class="logo mr-auto">
+                        <img src="/assets/img/SGLogo2.png" alt="" class="img-fluid">
+                    </a>
+    
+    
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <% if(code){ %>
+                            <li><a href="logout" style="color: white;">Logout</a></li>
+                            <%}else{%>
+                                <li><a href="login" style="color: white;">Login</a></li>
+                            <% }%>
+                        </ul>
+                    </nav><!-- .nav-menu -->
+                </div>
+            </div>
+    
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Intro Section ======= -->
+
+    <section class="team">
+        <div class="container" id="title">
+            <p class="h3">ADMIN</p>
+        </div>
+        <div class="container align-self-center">
+            <form method="POST" action="/login/admin/events">
+                <div clas="form-group row">
+                    <label for="mail" class="col-sm-3 form-control-label">Name of the event</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="name" required>
+                    </div>
+                </div><br>
+                <div class="input-group mb-3">
+                    <select class="custom-select" name="society" id="inputGroupSelect02">
+                        <option selected>Choose...</option>
+                        <option value="skillNights">Skill Nights</option>
+                        <option value="probe">Probe</option>
+                        <option value="ace">ACE</option>
+                        <option value="orator">Orator</option>
+                        <option value="fests">Fests</option>
+                        
+                    </select>
+                    <div class="input-group-append">
+                        <label class="input-group-text" for="inputGroupSelect02">Society</label>
+                    </div>
+                </div><br>
+                <div clas="form-group row">
+                    <label for="password" class="col-sm-3 form-control-label">Start date</label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" name="startDate" required>
+                    </div>
+                </div><br>
+                <div clas="form-group row">
+                    <label for="password" class="col-sm-3 form-control-label">End date</label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" name="endDate" required>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <div class="col-sm-3 offset-sm-2">
+                        <button type="submit" class="btn btn-primary" name="insert">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+
+
+
+
+    <!-- ======= Footer ======= -->
+    <%- include ('footer.ejs') %>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- Vendor JS Files -->
+    <%- include ('jsfiles.ejs') %>
+
+</body>
+
+</html>

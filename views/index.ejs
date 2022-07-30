@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Students' Gymkhana, IIIT NAGPUR</title>
+
+  <!-- Favicons -->
+
+  <link rel="shortcut icon" href="https://iiitn.ac.in/images/Favicon.ico">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  
+  
+  <%- include ('header.ejs') %>
+
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(/assets/img/fests/2.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h3> STUDENTS' GYMKHANA </h3>
+                <h3> IIIT NAGPUR</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(https://iiitn.ac.in/images/album/upcoming-campus-photo//ThumbnailImage.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h3> STUDENTS' GYMKHANA </h3>
+                <h3> IIIT NAGPUR</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(https://iiitn.ac.in/images/album/upcoming-campus-photo//5.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h3> STUDENTS' GYMKHANA </h3>
+                <h3> IIIT NAGPUR</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(https://iiitn.ac.in/images/album/upcoming-campus-photo//2.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h3> STUDENTS' GYMKHANA </h3>
+                <h3> IIIT NAGPUR</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(https://iiitn.ac.in/images/album/upcoming-campus-photo//14.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h3> STUDENTS' GYMKHANA </h3>
+                <h3> IIIT NAGPUR</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(https://pbs.twimg.com/media/FPQSFjQVsAU51UM?format=jpg&name=large)">
+            <div class="carousel-container">
+              <div class="container">
+                <h3> STUDENTS' GYMKHANA </h3>
+                <h3> IIIT NAGPUR</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+
+  <main id="main" >
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="container-sp">
+      <div class="row">
+        <div class="col-12 col-md-8" data-aos="fade-up">
+
+          <header class="section-header wow fadeInUp">
+            <h3>About Us</h3>
+          </header>
+
+          <div>
+
+            <p class="p" align="justify">The Students' Gymkhana is a student body, fostering all student activities at IIIT NAGPUR and bridging the gap between the students and the authorities. From its genesis in the year 2016, it seeks to cultivate various qualitative approaches amongst students to master an enhanced life. The Students' Gymkhana is the nucleus of the numerous extra-curricular, technical and co-curricular activities held in IIIT NAGPUR spanning activities of different genres of sports, cultural and technical fields. It plays a cardinal role in cultivating and nurturing their extra-curricular talents here by encouraging their participation in a number of contrasting events. Gymkhana works towards an aim to bring all round development in the students through their active role in extra-curricular activities to supplement education and advancing the general welfare of our students. The hierarchy of Students' Gymkhana comprises the President, Students' Senate, an elected representative body and the elected executives: the Vice President, General Secretary Socio-Cultural Council, General Secretary Science and Technology Council, General Secretary Sports Council. The Senate lays down the general guideline for the functions of the executives and their associated councils. General Elections are held every year during spring for various offices of powers. The elections are presided over by an election commissioner. The Gymkhana Elections and its healthy functioning are done in accordance to the Gymkhana Constitution.</p>
+
+
+          </div>
+
+        </div>
+
+        <div class="col-12 col-md-4">
+          <aside class="single_sidebar_widget popular_post_widget ">
+            <h3 class="widget_title" style="color: #2d2d2d;">Happenings</h3>
+            <% for(var i=0; i<result.length; i++){ %>
+              <div class='media post_item row'>
+                <img class='col-3' src='assets/img/Soc-Images/<%=result[i].name %>.png' width='55px'>
+                <div class='media-body col-9'>
+                  <a href="fests">
+                    <h3 style='color: #2d2d2d;'><%=result[i].name %></h3>
+                  </a>
+                  <p>From : <%=result[i].startDate %></p>
+                  <p>To : <%=result[i].endDate %></p>
+                </div>
+              </div>
+              <%}%>
+            
+          </aside>
+        </div>
+        
+
+      </div>  
+    </section>
+
+    <section id="services">
+      <div class="container-sp" data-aos="fade-up">
+
+        <header class="section-header wow fadeInUp">
+          <h3>President's Word</h3>
+        </header>
+
+        <div class="row">
+
+          <div class="col-12 col-md-3">
+            <!-- <img src="https://iiitn.ac.in/images/faculty/knd.jpg" style="display:block; margin:auto; height:40vh;"> -->
+            <div class="g-bg-color--white g-text-center--xs g-padding-x-10--xs g-padding-y-10--xs">
+              <p class="text-uppercase g-font-size-14--xs g-font-weight--500 g-color--primary g-letter-spacing--1">
+              </p>
+              <h3 class="g-font-size-22--xs g-letter-spacing--1"><a href="https://iiitn.ac.in/page/registrar/232/"> </a></h3>
+              <p>President<br>
+                  Students Gymkhana</p>
+            </div>
+          </div>  
+
+
+          <div class="col-12 col-md-9">
+
+            <p class="p" align="justify">Indian Institute of Information Technology, NAGPUR, from its humble start in 2016 has come down a long way in its strife to become one of the leading institutes of the country. Achieving this success in this short a journey would have been impossible without the contribution of the students and extensive support of the Students' Gymkhana, the students' representative body. Established in 2016, the Gymkhana has been efficiently working as an independent, self-governing and democratic organization that has bridged the gap between the students and the administration. From managing various societies catering to different interests and talents of the students, organizing various intra-college co-curricular, technical and sports events and competitions, holding informative workshops, celebrating the festivals at hostels with great fervor and organizing the institute's very own socio-cultural and technical fests, Tantra Fiesta and Abhivyankti respectively, the Students' Gymkhana has played a commendable role in nurturing the extra-curricular talents of the students, enhancing their personality and cultivating leadership qualities in them to equip them for a successful independent corporate and social life. It gives me immense pride and pleasure to be heading this organization, I congratulate all its members for their achievements so far and extend my support and good wishes to continue these appreciable efforts.</p>
+
+
+          </div>
+        </div>  
+
+      </div>
+
+    </section>
+
+
+
+    <section id="services" class="container-sp">
+      <div class="row align-items-center">
+        
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  
+  <%- include ('footer.ejs') %>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- Vendor JS Files -->
+  <%- include ('jsfiles.ejs') %>
+  
+</body>
+
+</html>
