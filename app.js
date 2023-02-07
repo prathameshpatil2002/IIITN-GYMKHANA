@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 app.set('view engine', 'ejs')
@@ -41,5 +42,5 @@ app.use('/orator',orator)
 app.use(express.static(__dirname + '/views'));
 
 app.listen(PORT, () => {
-    console.log("server is listening to http://localhost:3000");
+    console.log(`server is listening to http://localhost:${PORT}`);
 }) 

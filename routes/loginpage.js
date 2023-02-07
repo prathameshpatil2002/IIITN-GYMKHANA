@@ -2,7 +2,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient;
 
-const url = "mongodb://localhost:27017/";
+const url = process.env.MONGO_URI;
 
 var isLoggedIn = 0;
 
