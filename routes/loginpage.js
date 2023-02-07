@@ -40,7 +40,7 @@ router.post('/admin',(req,res,next)=>{
                 res.redirect('/login')
            }
           else{
-              isLoggedIn = 1
+                isLoggedIn = 1
                 res.redirect('/login/admin/events')
           }
            
@@ -52,6 +52,7 @@ router.post('/admin',(req,res,next)=>{
 
 router.get('/admin/events',(req,res,next)=>{
     if(isLoggedIn){
+       
         res.render('clubInfo',{code : isLoggedIn})
     }
     else{
@@ -82,6 +83,7 @@ router.post('/admin/events',(req,res,next)=>{
        })
       
    })
+   isLoggedIn = 1
    res.redirect('/login/admin/events');
 })
 
