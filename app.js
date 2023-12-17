@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+/** 
+soon to be depreceted
+
 const index = require("./routes/index");
 const contact = require("./routes/contact");
 const fests = require("./routes/fests");
@@ -24,6 +27,8 @@ const loginpage = require("./routes/loginpage");
 const ace = require("./routes/ace");
 const probe = require("./routes/probe");
 const orator = require("./routes/orator");
+
+*/
 
 app.use('/', index)
 app.use('/index',index)
