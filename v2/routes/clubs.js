@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router()
-const clubsController = require('../controllers/clubsController')
+const clubsController = require('../controllers/clubs')
 
 
 router.route('/ace').get(clubsController.aceController)
