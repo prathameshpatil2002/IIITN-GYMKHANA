@@ -1,2 +1,3 @@
 # IIITN-GYMKHANA
-Web App Deployment Link : https://iiitn-gymkhana.cyclic.app
+
+Live App Deployment Link : https://iiitn-gymkhana.cyclic.app
