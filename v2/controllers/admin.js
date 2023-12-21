@@ -12,29 +12,32 @@ const adminLogin = async (req,res) => {
     try{
         const { username , password } = req.body;
          if(!username || !password){
-           return res.redirect('/')
+             console.log('not username or password')
+            res.redirect('/admin')
         }
 
         const admin = await Admin.find({username : username});
 
         if(!admin){
-             return res.redirect('/')
+             console.log('not admin')
+              res.redirect('/admin')
         }
 
         const validAdmin = await bcrypt.compare(password,admin.password);
 
         if(!validAdmin){
-             return res.redirect('/')
+             console.log('not valid admin')
+              res.redirect('/admin')
         }
 
         const salt = await bcrypt.genSalt(10);
         const hashedUserName = await bcrypt.hash(username,salt);
 
-        return res.redirect(`/events?admin=${username}&auth=${hashedUserName}`)
+         res.redirect(`/admin/events?admin=${username}&auth=${hashedUserName}`)
 
 
     }catch(err){
-        return res.redirect('/')
+         res.redirect('/admin')
     }
 }
 

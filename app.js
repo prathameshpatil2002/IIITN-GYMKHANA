@@ -1,8 +1,10 @@
 require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 
 const PORT = process.env.PORT || 3001;
+
 
 const app = express();
 app.set('view engine', 'ejs')
@@ -13,35 +15,25 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-/** 
-soon to be depreceted
+mongoose.connect(
+    process.env.DB
+);
 
-const index = require("./routes/index");
-const contact = require("./routes/contact");
-const fests = require("./routes/fests");
-const facilities = require("./routes/facilities");
-const office = require("./routes/office");
-const sports = require("./routes/sports");
-const cultural = require("./routes/cultural");
-const loginpage = require("./routes/loginpage");
-const ace = require("./routes/ace");
-const probe = require("./routes/probe");
-const orator = require("./routes/orator");
+const miscRoutes = require('./v2/routes/misc')
+const festsRoutes = require('./v2/routes/fests')
+const clubsRoutes = require('./v2/routes/clubs')
+const adminRoutes = require('./v2/routes/admin')
+const contactRoutes = require('./v2/routes/contact');
 
-*/
-
-app.use('/', index)
-app.use('/index',index)
-app.use('/contact', contact)
-app.use('/sports', sports)
-app.use('/cultural', cultural)
-app.use('/office', office)
-app.use('/fests', fests)
-app.use('/facilities', facilities)
-app.use('/login',loginpage)
-app.use('/ace',ace)
-app.use('/probe',probe)
-app.use('/orator',orator)
+app.use('/', miscRoutes.indexRouter)
+app.use('/cultural', miscRoutes.culturalRouter)
+app.use('/office', miscRoutes.officeRouter)
+app.use('/fests', festsRoutes)
+app.use('/facilities', miscRoutes.facilitiesRouter)
+app.use('/admin',adminRoutes)
+app.use('/clubs',clubsRoutes)
+app.use('/contact',contactRoutes)
+app.use('/sports',miscRoutes.sportsRouter)
 
 
 app.use(express.static(__dirname + '/views'));
