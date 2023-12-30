@@ -2,7 +2,7 @@ const Event = require('../models/Event')
 const Admin = require('../models/Admin')
 
 const bcrypt = require('bcrypt')
-
+const { response } = require('express')
 
 const loginPageRender = (req,res) => {
     res.render('loginpage')
@@ -12,31 +12,21 @@ const adminLogin = async (req,res) => {
     try{
         const { username , password } = req.body;
          if(!username || !password){
-             console.log('not username or password')
             res.redirect('/admin')
         }
 
-        const admin = await Admin.find({username : username});
-
-        if(!admin){
-             console.log('not admin')
-              res.redirect('/admin')
-        }
+        const admin = await Admin.findOne({username : username});
 
         const validAdmin = await bcrypt.compare(password,admin.password);
-
-        if(!validAdmin){
-             console.log('not valid admin')
-              res.redirect('/admin')
-        }
 
         const salt = await bcrypt.genSalt(10);
         const hashedUserName = await bcrypt.hash(username,salt);
 
-         res.redirect(`/admin/events?admin=${username}&auth=${hashedUserName}`)
+        res.redirect(`/admin/events?admin=${username}&auth=${hashedUserName}`)
 
 
     }catch(err){
+        console.log(err)
          res.redirect('/admin')
     }
 }
@@ -46,23 +36,17 @@ const getEvents = async (req,res) => {
         const {admin,auth} = req.query;
 
         if(admin && auth){
-            const user = await Admin.find({username:admin});
-
-            if(!user){
-                  res.redirect('/')
-            }
+            const user = await Admin.findOne({username:admin});
 
             const valid = await bcrypt.compare(admin,auth);
             
-            if(!valid){
-                  res.redirect('/')
-            }
-            else{
-                res.send('clubInfo',{code:1})
+            if(valid){
+                res.render('clubInfo',{code:1})
             }
         }
     }catch(err){
-        res.redirect('/')
+        console.log(err)
+        res.redirect('/admin')
     }
    
 
@@ -71,11 +55,11 @@ const getEvents = async (req,res) => {
 const addEvents = async (req,res)=>{
     try{
 
-        const { name , club , startDate , endDate} = req.body
+        const { name , society , startDate , endDate} = req.body
 
         const event = await Event.create({
             name:name,
-            club:club,
+            club:society,
             startDate:startDate,
             endDate:endDate,
         })

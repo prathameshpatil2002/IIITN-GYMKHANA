@@ -15,8 +15,8 @@ const sportsController = (req,res) => {
 }
 
 const indexController = (req,res) =>{
-    Event.find({club:'fest'})
-        .then(fests => res.render('index',{fests}))
+    Event.find({club:'fests'})
+        .then(result => res.render('index',{result}))
          .catch(err=>{throw err})
 }
 

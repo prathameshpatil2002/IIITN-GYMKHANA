@@ -8,12 +8,12 @@ const culturalRouter = express.Router()
 const indexRouter = express.Router()
 const sportsRouter = express.Router()
 
-officeRouter.route('/office').get(officeController)
-facilitiesRouter.route('/facilities').get(facilitiesController)
-culturalRouter.route('/cultural').get(culturalController)
-sportsRouter.route('/sports').get(sportsController)
+officeRouter.route('/').get(officeController)
+facilitiesRouter.route('/').get(facilitiesController)
+culturalRouter.route('/').get(culturalController)
+sportsRouter.route('/').get(sportsController)
 indexRouter.route('/').get(indexController)
-indexRouter.route('/index').get(indexController)
+indexRouter.route('/').get(indexController)
 
 
 module.exports = {officeRouter , facilitiesRouter , culturalRouter , sportsRouter , indexRouter}

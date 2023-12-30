@@ -52,9 +52,9 @@
                     <nav class="nav-menu d-none d-lg-block">
                         <ul>
                             <% if(code){ %>
-                            <li><a href="logout" style="color: white;">Logout</a></li>
+                            <li><a href="admin/logout" style="color: white;">Logout</a></li>
                             <%}else{%>
-                                <li><a href="login" style="color: white;">Login</a></li>
+                                <li><a href="admin" style="color: white;">Login</a></li>
                             <% }%>
                         </ul>
                     </nav><!-- .nav-menu -->
@@ -71,7 +71,7 @@
             <p class="h3">ADMIN</p>
         </div>
         <div class="container align-self-center">
-            <form method="POST" action="/login/admin/events">
+            <form method="POST" action="/admin/events">
                 <div clas="form-group row">
                     <label for="mail" class="col-sm-3 form-control-label">Name of the event</label>
                     <div class="col-sm-9">

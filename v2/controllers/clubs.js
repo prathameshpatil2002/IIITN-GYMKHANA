@@ -3,24 +3,24 @@ const Event = require('../models/Event')
 
 const aceController = (req,res) => {
    Event.find({club:'ace'})
-   .then(events =>
-       res.render('clubs/ace',{events})
+   .then(result =>
+       res.render('clubs/ace',{result})
    )
    .catch(err=>{throw err})
 }
 
 const probeController = (req,res) => {
    Event.find({club:'probe'})
-   .then(events =>
-       res.render('clubs/probe',{events})
+   .then(result =>
+       res.render('clubs/probe',{result})
    )
    .catch(err=>{throw err})
 }
 
 const oratorController = (req,res) => {
    Event.find({club:'orator'})
-   .then(events =>
-       res.render('clubs/orator',{events})
+   .then(result =>
+       res.render('clubs/orator',{result})
    )
    .catch(err=>{throw err})
 }

@@ -2,25 +2,25 @@ const Feedback = require('../models/Feedback')
 
 
 const getFeedBackPage = (req,res) =>{
-    res.send('contact')
+    res.render('contact')
 }
 
 const storeFeedBackFormData = async (req,res) =>{
     try{
 
-        const { name , email , contact , text} = req.body
+        const { name , email , contact , feedback} = req.body
 
         const data = await Feedback.create({
             name:name,
             email:email,
             contact:contact,
-            text:text,
+            text:feedback,
         })
 
-         res.redirect('/');
+         res.redirect('/contact');
 
     }catch(err){
-         res.redirect('/');
+         res.redirect('/contact');
         throw err
     }
 }

@@ -1,11 +1,13 @@
 const express = require("express");
 
-const clubsRouter = express.Router()
+const probeRouter = express.Router()
+const aceRouter = express.Router()
+const oratorRouter = express.Router()
 const clubsController = require('../controllers/clubs')
 
 
-clubsRouter.route('/ace').get(clubsController.aceController)
-clubsRouter.route('/orator').get(clubsController.oratorController)
-clubsRouter.route('/probe').get(clubsController.probeController)
+aceRouter.route('/').get(clubsController.aceController)
+oratorRouter.route('/').get(clubsController.oratorController)
+probeRouter.route('/').get(clubsController.probeController)
 
-module.exports = clubsRouter
+module.exports = {aceRouter , oratorRouter , probeRouter}

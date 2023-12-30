@@ -10,11 +10,11 @@ const EventSchema = new Schema({
         required : [true,"Club Name is required"]
     },
     startDate : {
-        type: Date,
+        type: String,
         required : [true,"Start date is required"]
     },
     endDate : {
-       type: Date,
+       type: String,
         required : [true,"End date is required"]
     },
    

@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const morgan = require('morgan')
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
+app.use(morgan('tiny'))
 
 mongoose.connect(
     process.env.DB
@@ -31,7 +33,9 @@ app.use('/office', miscRoutes.officeRouter)
 app.use('/fests', festsRoutes)
 app.use('/facilities', miscRoutes.facilitiesRouter)
 app.use('/admin',adminRoutes)
-app.use('/clubs',clubsRoutes)
+app.use('/orator',clubsRoutes.oratorRouter)
+app.use('/probe',clubsRoutes.probeRouter)
+app.use('/ace',clubsRoutes.aceRouter)
 app.use('/contact',contactRoutes)
 app.use('/sports',miscRoutes.sportsRouter)
 
