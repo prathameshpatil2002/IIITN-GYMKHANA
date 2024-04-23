@@ -19,7 +19,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.17.2",
     "mongodb": "^4.5.0",
-    "mongoose": "^6.3.1",
+    "mongoose": "^6.11.3",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
   },
